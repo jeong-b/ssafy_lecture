@@ -1,38 +1,43 @@
 ﻿#include <iostream>
-#include <cstring>
 using namespace std;
 
-int number, start, finish;
-string headline[10];
-string code;
+char map[4][4];
+char monster[26][2];
+int dir[5][2] = { {0, 1}, {-1, 0}, {0, -1}, {1, 0}, {0, 1} };
+int dat[26];
+int monsterIndex;
 
-void run(int level, int index)
+void input()
 {
-	if (level >= headline[index].length()) return;
-	if (level == 0) finish = 0;
-	for (int i = finish; i < headline[index].length(); i++)
+	for (int i = 0; i < 4; i++)
 	{
-		start = headline[index].find('[', finish);
-		finish = headline[index].find(']', start);		
+		cin >> map[i];
+	}
 
-		if (start == -1 || finish == -1 || finish - start - 1 != 5) return;
-
-		code = headline[index].substr(start, 7);
-		cout << code << "\n";
-		
-		run(level + finish, index);
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			if (map[i][j] >= 'A' && map[i][j] <= 'Z')
+			{
+				dat[map[i][j] - 'A']++;
+				monster[map[i][j] - 'A'][0] = i;
+				monster[map[i][j] - 'A'][1] = j;
+			}
+		}
 	}
 }
 
+void changePosition(int time, int number)
+{
+	if (time == 5) return;
+	
+}
 
 int main()
 {
-	cin >> number;
-	for (int i = 0; i < number; i++)
-	{
-		cin >> headline[i];
-		run(0, i);
-	}
-	
+	input();
+	changePosition(0, 0);
+
 	return 0;
 }
