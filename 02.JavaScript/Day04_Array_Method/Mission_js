@@ -1,0 +1,25 @@
+const bucketLists = [
+  { id: 3, text: "여행 가기", done: false},
+  { id: 2, text: "치킨 먹기", done: true},
+  { id: 1, text: "코딩 하기", done: false}
+];
+
+function getValues(key) {  
+  return [ bucketLists[0][key], bucketLists[1][key], bucketLists[2][key]];
+}
+console.log(getValues("id"));
+console.log(getValues("text"));
+console.log(getValues("done"));
+
+
+const removeList = (id) => bucketLists.filter((list) => list.id !== id);
+// function으로도 해보기
+console.log(removeList(2));
+
+const toggle = (id) => bucketLists.map((list) => {
+  if (list.id === id) list.done = !list.done;
+  return list;
+})
+console.log(toggle(1));
+
+console.log(bucketLists);

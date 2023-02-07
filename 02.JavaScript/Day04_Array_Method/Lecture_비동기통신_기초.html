@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>서버에서 데이터를 가져오자!</h1>
+    <button>가져오기</button>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.3.2/dist/axios.min.js"></script>
+    <script>
+      // async : 해당함수의 순서를 JS가 판단하지 않고 개발자가 통제하는대로 구현하도록 함
+      const getData = async () => {
+        try {
+          // axios : Http 통신시 사용하는 라이브러리
+          // axios.get(address) : address를 가져와라
+          // await : 현재의 script를 벗어날 때 기다려서 실행하도록 명시
+          const response = await axios.get(
+            "https://jsonplaceholder.typicode.com/todos"
+          );
+          console.log(response.data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      // 아래의 방식으로도 위의 함수 구현가능
+      // then : axios 내부 매서드로 위의 함수가 성공하면 시횅해라
+      /*
+      const getData = () => {
+        axios
+          .get("https://jsonplaceholder.typicode.com/todos")
+          .then((response) => {
+            console.log(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+      */
+      const btn = document.querySelector("button");
+      btn.addEventListener("click", getData);
+    </script>
+  </body>
+</html>
