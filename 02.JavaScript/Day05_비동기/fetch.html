@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div>
+
+  </div>
+
+  <script>
+    // XHR, Fetch -> 자바스크립트(브라우져) 자체 라이브러리
+
+    // Promise 형식
+    fetch('https://jsonplaceholder.typicode.com/todos')
+      .then(response => response.json())
+      .then(json => console.log(json))
+
+    // async, await
+    async function getData() {
+      try {
+        const fetchData = await fetch('https://jsonplaceholder.typicode.com/todos');
+        const data = await fetchData.json();
+        console.log(data);
+
+        document.querySelector("div").insertAdjacentHTML('beforeend',json.stringfy(data));
+      } catch (error) {
+        console.log(error);
+        document.querySelector("div").textContent = "데이터를 가져오지 못했습니다."
+      }
+    }
+
+</script>
+
+</body>
+</html>

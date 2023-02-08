@@ -1,0 +1,18 @@
+hi {
+  text-align: center;
+}
+.container{
+  height: 384px;
+  width: 512px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.column {
+  margin: 5px;
+}

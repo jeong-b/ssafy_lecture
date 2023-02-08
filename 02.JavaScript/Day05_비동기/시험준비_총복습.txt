@@ -1,0 +1,52 @@
+1. 동적인 웹을 만들기 위해 Javascript를 사용한다.
+
+2. JavaScript의 실행환겅은 브라우저, 브라우저를 벗어난 환경은 node.js를 활용
+-> 브라우저, node.js를 실행기(runtime)라고 한다.
+
+3. ECMA Script : Javascript를 사용하는 규칙을 말한다.
+
+4. === vs. ==
+
+5. var, let, const : 변수 호이스팅 -> 세개 다 발생한다. 단, let, const는 접근이 불가능
+
+6. 함수표현식 - 화살표 함수는 무명함수이다.
+const sampleFunc = () => {}
+-> 함수 호이스팅이 아닌 변수 호이스팅이 발생한다.
+
+7. const여도 각 element는 수정가능하다.
+
+8. dom 접근할 때, document.querySelectot("CSS 선택자")
+-> 유사한 기능을 하는 것 : getElementById(), getElementByClassName()
+
+9. addEventlistenr vs. 인라인 이벤트 방식
+addEventListener
+const btn = document.querySelector("button")
+btn.addEventListener("click", (()=>console.log("hi!")))
+
+--------------------------------------------------------
+인라인 이벤트 방식
+<
+
+10. ClassList - add, remove
+
+11. 콜백함수 : 함수 안에 들어가는 함수 원형
+
+12. slice vs. splice
+
+13. forEach, map, filter, reduce
+-> 원본Data를 수정하지 않겠다
+
+14. indexOf, concat -  배열 연결, push, split
+
+15. 버블링, 캡쳐, 위임
+
+16. HTTP Request Method
+GET -  값을 가져올 떄
+POST - 값을 등록할 때
+PUT -  값을 전체 수정
+PATCH - 값을 일부 수정
+DELETE - 값을 삭제
+
+17. min.js 가독성을 줄이고 용량을 중리고자 띄어쓰기, 줄바꿈이 없는 문서
+
+18. JSON : 데이터 표준

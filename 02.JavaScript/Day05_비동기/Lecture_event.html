@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .one,
+      .two,
+      .three {
+        border: 1px solid black;
+        margin: 0 auto;
+      }
+      .one {
+        height: 200px;
+        width: 800px;
+      }
+      .two {
+        height: 150px;
+        width: 600px;
+      }
+      .three {
+        height: 100px;
+        width: 400px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="one">
+      one
+      <div class="two">
+        two
+        <div class="three">three</div>
+      </div>
+    </div>
+    <script>
+      // const divs = document.querySelectorAll("div");
+      // divs.forEach((div) => {
+      //   div.addEventListener("click", (event) => {
+      //     console.log(event.target.className); // (three 클릭시) three three three
+      //     console.log(event.currentTarget.className); // (three 클릭시) three two one
+      //     // target : 실제 이벤트가 작동되야 하는 곳
+      //     // curruntTarget : 현재 이벤트가 머물러있는 곳
+      //     // event의 default는 bubbling이다.
+      //   }, {
+      //     capture: true // (currentTarget/three 클릭시) one two three
+      //   });
+      // });
+      
+      // 이벤트 위임 : 자식에서 발생한 이벤트를 부모에 위임한다
+      const one = document.querySelector(".one");
+      one.addEventListener("click", (event) => {
+        console.log(event.target.className);
+      });
+    </script>
+  </body>
+</html>
