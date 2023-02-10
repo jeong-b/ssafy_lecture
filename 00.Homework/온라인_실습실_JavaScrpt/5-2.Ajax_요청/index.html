@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog API</title>
+  <style>
+    img {
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dog API</h1>
+  <img src="./noResult.png" alt="dog" />
+  <p>아직 선택된 사진이 없습니다.</p>
+  <br>
+  <button>Get dog</button>
+  
+  <!-- axios CDN을 삽입한다. -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const API_URI = 'https://dog.ceo/api/breeds/image/random'
+    
+    async function getDog () {      
+      const img = document.querySelector('img');
+      const p = document.querySelector('p');
+      const result = await axios.get(API_URI)
+      console.log(result);
+      img.setAttribute('src', result.data.message)
+      p.remove();
+    }
+
+    const button = document.querySelector('button')
+    button.addEventListener('click', getDog)
+  </script>
+</body>
+</html>
