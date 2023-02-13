@@ -25,9 +25,9 @@ btn.addEventListener("click", (()=>console.log("hi!")))
 
 --------------------------------------------------------
 인라인 이벤트 방식
-<
+onclick
 
-10. ClassList - add, remove
+10. ClassList - add, remove toggle contains replace
 
 11. 콜백함수 : 함수 안에 들어가는 함수 원형
 
