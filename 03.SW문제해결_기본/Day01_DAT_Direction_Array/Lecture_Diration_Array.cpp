@@ -1,3 +1,4 @@
+/* Direction Array - 방향 배열*/
 #include<iostream>
 using namespace std;
 
